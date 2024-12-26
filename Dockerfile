@@ -1,20 +1,22 @@
-ARG IMAGE=intersystemsdc/irishealth-community
-ARG IMAGE=intersystemsdc/iris-community
-FROM $IMAGE
+# Specify the base image with a version tag
+FROM intersystemsdc/iris-community:2023.1.4.580.0-zpm
 
-USER root   
-## add git
-RUN apt update && apt-get -y install git
-        
-WORKDIR /opt/irisbuild
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisbuild
-USER ${ISC_PACKAGE_MGRUSER}
+RUN addgroup -S irisgrp || true \
+    && adduser -S irisowner -G irisgrp || true
 
-#COPY  Installer.cls .
-COPY  src src
-COPY module.xml module.xml
-COPY iris.script iris.script
+USER irisowner
+# Set the working directory
+WORKDIR /opt/irisapp
 
-RUN iris start IRIS \
-	&& iris session IRIS < iris.script \
-    && iris stop IRIS quietly
+# Define build arguments with default values
+ARG TESTS=0
+ARG MODULE="aoc-2024-uvg"
+ARG NAMESPACE="IRISAPP"
+
+# Install and configure the application
+RUN --mount=type=bind,src=.,dst=. \
+    iris start IRIS && \
+    iris session IRIS < iris.script && \
+    ([ "$TESTS" -eq 0 ] || \
+    iris session iris -U "$NAMESPACE" "##class(%ZPM.PackageManager).Shell(\"test $MODULE -v -only\",1,1)") && \
+    iris stop IRIS quietly
