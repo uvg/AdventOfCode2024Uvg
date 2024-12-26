@@ -47,10 +47,10 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 		}
 	}
 	//zwrite arrKey,arrLock
-	set lock="",maxSize=height-2,fits=0
+	set lockId="",maxSize=height-2,fits=0
 	for  {
-		set lock=$order(arrLock(lock)) quit:'$length(lock)
-		set lockData=arrLock(lock)
+		set lockId=$order(arrLock(lockId)) quit:'$length(lockId)
+		set lockData=arrLock(lockId)
 		set key=""
 		for  {
 			set key=$order(arrKey(key)) quit:'$length(key)
@@ -58,7 +58,7 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 			f i=1:1:len {
 				i $li(lockData,i)+$li(keyData,i)>maxSize s overlap=1 q
 			}
-			set:'overlap arrFit(lock,key)="",fits=fits+1
+			set:'overlap arrFit(lockId,key)="",fits=fits+1
 		}
 	}
 	if verbose zwrite arrFit
