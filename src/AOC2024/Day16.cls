@@ -192,7 +192,6 @@ ClassMethod SetAllPathsOnGrid(ByRef grid, ByRef bestPaths, value As %Integer) As
 	set total=0,y=""
 	for  {
 		set y=$order(grid(y)) quit:'$length(y)
-		set data=grid(y)
 		set total=total+$length(grid(y),"O")-1
 	}
 	quit total
