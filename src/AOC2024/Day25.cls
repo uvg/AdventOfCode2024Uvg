@@ -9,7 +9,7 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",cnt=0,state=0
+	set answer="",line="",cnt=0
 	for {
 		set line=$order(recordsArr(line)) quit:line=""
 		set record=recordsArr(line)
