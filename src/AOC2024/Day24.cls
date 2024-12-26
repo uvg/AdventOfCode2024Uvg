@@ -68,7 +68,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 		set record=recordsArr(line)
 		if '$length(record) set state=1 continue
 		if state=0 {
-			set input=$piece(record,": ",1),output=$piece(record,": ",2)
+			set input=$piece(record,": ",1) //,output=$piece(record,": ",2)
 			set arrWires(input)=$listbuild("","","","")
 		} else {
 			set in1=$piece(record," ",1),type=$piece(record," ",2),in2=$piece(record," ",3),out=$piece(record," ",5)
@@ -179,7 +179,7 @@ ClassMethod createCorrectConnections(ByRef arrWires, Output changes) [ Private ]
 				set j="",swChange=0
 				for  {
 					set j=$order(newWires(j)) quit:'$length(j)
-					set data=newWires(j),beforeData=data
+					set data=newWires(j) //,beforeData=data
 					if $list(data,1)'=from,$list(data,2)'=from,$list(data,1)'=to,$list(data,2)'=to continue
 					if $list(data,1)=from {
 						set $list(data,1)=to
