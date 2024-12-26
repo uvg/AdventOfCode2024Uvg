@@ -88,7 +88,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set regA=+$piece(recordsArr(1),": ",2),regB=+$piece(recordsArr(2),": ",2),regC=+$piece(recordsArr(3),": ",2),instructions=$piece(recordsArr(5),": ",2),ip=0
+	set regA=+$piece(recordsArr(1),": ",2),regB=+$piece(recordsArr(2),": ",2),regC=+$piece(recordsArr(3),": ",2),instructions=$piece(recordsArr(5),": ",2) //,ip=0
 	if verbose zwrite regA,regB,regC,instructions
 	set answer=$list(..getRegA(0,regB,regC,instructions,$length(instructions,","),verbose),1)
 	quit answer
