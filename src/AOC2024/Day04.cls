@@ -9,7 +9,7 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",total=0,width=$length(recordsArr(1)),height=$order(recordsArr(""),-1)
+	set answer="",line="",total=0 //,width=$length(recordsArr(1)),height=$order(recordsArr(""),-1)
 	for {
 		set line=$order(recordsArr(line)) quit:line=""
 		set record=recordsArr(line),start=0
@@ -50,7 +50,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",total=0,width=$length(recordsArr(1)),height=$order(recordsArr(""),-1)
+	set answer="",line="",total=0 //,width=$length(recordsArr(1)),height=$order(recordsArr(""),-1)
 	for {
 		set line=$order(recordsArr(line)) quit:line=""
 		set record=recordsArr(line),start=0
