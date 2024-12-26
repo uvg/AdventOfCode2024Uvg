@@ -9,7 +9,7 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",data=recordsArr(1)
+	set answer="",data=recordsArr(1)
 	set type=0,id=0,pos=0
 	for i=1:1:$length(data) {
 		set size=$extract(data,i)
@@ -54,7 +54,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",data=recordsArr(1)
+	set answer="",data=recordsArr(1)
 	set type=0,id=0,pos=0
 	for i=1:1:$length(data) {
 		set size=$extract(data,i)
