@@ -9,7 +9,7 @@ ClassMethod Part1(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line=""
+	set answer="" //,line=""
 	set startPos=..FindStart(.recordsArr) //$listbuild(x,y,$lb(dx,dy))
 	if verbose zwrite startPos
 	set answer=..TotalDistinct(.recordsArr,$list(startPos,1),$list(startPos,2),$list($list(startPos,3),1),$list($list(startPos,3),2))
@@ -59,7 +59,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line=""
+	set answer="" //,line=""
 	set startPos=..FindStart(.recordsArr) //$listbuild(x,y,$lb(dx,dy))
 	if verbose zwrite startPos
 	set answer=..TotalDistinctNewObstruction(.recordsArr,$list(startPos,1),$list(startPos,2),$list($list(startPos,3),1),$list($list(startPos,3),2),verbose)
