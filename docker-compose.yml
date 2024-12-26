@@ -10,4 +10,5 @@ services:
       - 52773
       - 53773
     volumes:
-      - ./:/irisrun/repo
+      - ./:/opt/irisapp
+      # - ./:/irisrun/repo
