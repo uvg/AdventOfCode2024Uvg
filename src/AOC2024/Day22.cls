@@ -128,7 +128,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 			set:'$data(arrSeqByLine(sequence,line)) arrSeqByLine(sequence,line)=bananas
 		}
 	}
-	if verbose zwrite arrSeqByLine
+	//if verbose zwrite arrSeqByLine
 	set seq="",max=0,best=""
 	set seq=""
 	for  {
@@ -140,6 +140,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 		}
 		if total>max set max=total,best=seq
 	}
+	if verbose zwrite best
 	set answer=max
 	quit answer
 }
