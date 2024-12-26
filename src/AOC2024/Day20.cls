@@ -152,7 +152,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 
 ClassMethod getcheatPosArr2(ByRef grid, pathStartToEnd As %String, minDiff As %Integer, Output cheatPosArr) [ Private ]
 {
-	set dirs=$listbuild($listbuild(-1,0),$listbuild(0,-1),$listbuild(1,0),$listbuild(0,1)),totalDirs=$listlength(dirs)
+	set dirs=$listbuild($listbuild(-1,0),$listbuild(0,-1),$listbuild(1,0),$listbuild(0,1)) //,totalDirs=$listlength(dirs)
 	set pathLen=$listlength(pathStartToEnd)
 	for i=1:1:pathLen {
 		set path(i)=$list(pathStartToEnd,i)
