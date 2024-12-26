@@ -44,7 +44,7 @@ ClassMethod combo(regA As %Integer, regB As %Integer, regC As %Integer, operand 
 	quit $select(operand<4:operand,operand=4:regA,operand=5:regB,operand=6:regC)
 }
 
-ClassMethod div(regA As %Integer, regB As %Integer, regC As %Integer, operand As %Integer, Output regOut) As %Integer [ Private ]
+ClassMethod div(regA As %Integer, regB As %Integer, regC As %Integer, operand As %Integer, Output regOut) [ Private ]
 {
 	set value=..combo(regA,regB,regC,operand)
 	set denominator=2**value
