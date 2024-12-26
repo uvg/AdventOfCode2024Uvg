@@ -78,7 +78,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 	}
 	if verbose do ..GridDisplay(.grid)
 	set answer=mul
-	quit mul
+	quit answer
 }
 
 ClassMethod IsChristmasTreePicture(ByRef grid) As %Boolean [ Private ]
