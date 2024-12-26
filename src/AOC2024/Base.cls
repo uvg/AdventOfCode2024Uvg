@@ -3,7 +3,7 @@ Class AOC2024.Base
 
 Parameter Folder = "C:\devl\work\Cache\AOC\Files\2024\";
 
-// Parameter Folder = "/irisrun/repo/Files/";
+// Parameter Folder = "/opt/irisapp/Files/";
 
 ClassMethod GetInputToArray(fn As %String, ByRef recordsArr) As %Status
 {
