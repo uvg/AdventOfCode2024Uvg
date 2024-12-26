@@ -31,7 +31,7 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 {
 	do ..GetInputToArray(..#InputFile,.recordsArr)
 	//
-	set answer="",line="",total=0,do=1
+	set answer="",line="",total=0,doOrDont=1
 	for {
 		set line=$order(recordsArr(line)) quit:line=""
 		set record=recordsArr(line)
@@ -39,14 +39,14 @@ ClassMethod Part2(verbose = 0) As %String [ Private ]
 		set len=$length(record)
 		for i=1:1:len {
 			if $extract(record,i,i+3)="do()" {
-				set do=1,i=i+3
+				set doOrDont=1,i=i+3
 				continue
 			}
 			if $extract(record,i,i+6)="don't()" {
-				set do=0,i=i+6
+				set doOrDont=0,i=i+6
 				continue
 			}
-			continue:'do
+			continue:'doOrDont
 			continue:$extract(record,i,i+3)'="mul("
 			set value=$extract(record,i,i+11)
 			set value=$piece(value,"mul(",2)
