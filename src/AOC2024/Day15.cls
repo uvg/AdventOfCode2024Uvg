@@ -36,7 +36,7 @@ ClassMethod MoveRobot(info As %String, ByRef warehouseGrid, verbose As %Boolean)
 {
 	//info=$lb(robotInfo,width,height)
 	//robotInfo=$lb(robotPosX,robotPosY,robotInstructions)
-	set robotInfo=$list(info,1),width=$list(info,2),height=$list(info,3)
+	set robotInfo=$list(info,1) //,width=$list(info,2),height=$list(info,3)
 	set robotPosX=$list(robotInfo,1),robotPosY=$list(robotInfo,2),robotInstructions=$list(robotInfo,3)
 	//zw width,height,robotPosX,robotPosY,robotInstructions,warehouseGrid
 	if verbose write !!,"Initial state:"
@@ -73,8 +73,8 @@ ClassMethod ValidateBoxes(ByRef warehouseGrid) [ Private ]
 		set y=$order(warehouseGrid(y)) quit:'$length(y)
 		set data=warehouseGrid(y)
 		for i=1:1:width {
-			if $extract(warehouseGrid(y),i)="[",$extract(warehouseGrid(y),i+1)'="]" s isOk=0 q
-			if $extract(warehouseGrid(y),i)="]",$extract(warehouseGrid(y),i-1)'="[" s isOk=0 q
+			if $extract(data,i)="[",$extract(data,i+1)'="]" s isOk=0 q
+			if $extract(data,i)="]",$extract(data,i-1)'="[" s isOk=0 q
 		}
 }
 	quit:isOk
@@ -105,9 +105,9 @@ ClassMethod MoveBoxesUpDown(boxPosX As %Integer, boxPosY As %Integer, dy As %Int
 	set newBoxPosX=boxPosX,newBoxPosY=boxPosY+dy
 	set fromLtr1=$extract(warehouseGrid(boxPosY),boxPosX),toLtr1=$extract(warehouseGrid(newBoxPosY),newBoxPosX)
 	if fromLtr1="[" {
-		set fromLtr2="]",toLtr2=$extract(warehouseGrid(newBoxPosY),newBoxPosX+1)
+		set toLtr2=$extract(warehouseGrid(newBoxPosY),newBoxPosX+1)
 	} else {
-		set fromLtr1="[",fromLtr2="]",toLtr2=toLtr1,toLtr1=$extract(warehouseGrid(newBoxPosY),newBoxPosX-1)
+		set fromLtr1="[",toLtr2=toLtr1,toLtr1=$extract(warehouseGrid(newBoxPosY),newBoxPosX-1)
 		set boxPosX=boxPosX-1,newBoxPosX=newBoxPosX-1
 	}
 	if (toLtr1_toLtr2)["#" quit 0
