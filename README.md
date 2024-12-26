@@ -1,4 +1,4 @@
- [![Quality Gate Status]([https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community__AdventOfCode2024Uvg&metric=alert_status&token=sqb_971c88516eaf0f049a07a93592eaf20f85c96c85)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community__AdventOfCode2024Uvg)
+ [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community__AdventOfCode2024Uvg&metric=alert_status&token=sqb_971c88516eaf0f049a07a93592eaf20f85c96c85)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community__AdventOfCode2024Uvg)
  [![Reliability Rating](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FAdventOfCode2024Uvg&metric=reliability_rating)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FAdventOfCode2024Uvg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=AdGuard)](LICENSE)
