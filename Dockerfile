@@ -11,7 +11,8 @@ WORKDIR /opt/irisapp
 # Define build arguments with default values
 ARG TESTS=0
 ARG MODULE="aoc-2024-uvg"
-ARG NAMESPACE="IRISAPP"
+# ARG NAMESPACE="IRISAPP"
+ARG NAMESPACE="USER"
 
 # Install and configure the application
 RUN --mount=type=bind,src=.,dst=. \
